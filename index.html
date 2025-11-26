@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фианит Ломбард — Хранение</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F7F7F7;color:#333;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.4}
+  a{text-decoration:none;color:inherit}
+  button{cursor:pointer}
+  .container{max-width:1200px;margin:0 auto;padding:0 20px}
+  nav a{margin:0 15px;font-weight:500}
+  header{background:#fff;padding:20px 0;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee}
+  .header-inner{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:24px;font-weight:700}
+  section{padding:80px 0}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .hero-visual{width:100%;height:320px;border-radius:24px;background:linear-gradient(135deg,#ffe5e5,#ffffff)}
+  .cta{border-radius:9999px;background:#FF0000;color:#fff;font-size:18px;font-weight:600;padding:14px 32px;border:none;transition:background .2s ease,box-shadow .2s ease,transform .2s ease}
+  .cta:hover{background:#e00000;box-shadow:0 4px 12px rgba(255,0,0,.3);transform:translateY(-2px)}
+  .secondary{color:#666;font-size:14px;margin-top:12px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+  .card{background:#fff;padding:24px;border-radius:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24;margin-top:40px}
+  .step{background:#fff;padding:24px;border-radius:24px;box-shadow:0 1px 3px rgba(0,0,0,.06);text-align:center}
+  .circle{width:56px;height:56px;border-radius:50%;background:#FF0000;color:#fff;font-size:22px;font-weight:700;display:flex;justify-content:center;align-items:center;margin:0 auto 16px}
+  .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:24;margin-top:40px}
+  .details-group{margin-top:40px}
+  .details-group details{background:#fff;border-radius:16px;margin-bottom:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .details-group summary{font-weight:600;font-size:16px;list-style:none;position:relative;padding-right:24px}
+  .details-group summary::after{content:"+";position:absolute;right:0;top:0;font-size:20px;font-weight:700}
+  .details-group details[open] summary::after{content:"−"}
+  #terms .card{padding:20px 24px;font-size:16px;font-weight:500;margin-top:20px}
+  footer{background:#eee;padding:40px 0;font-size:14px}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+  .footer-links a{margin-right:16px}
+  @media(max-width:992px){
+    .benefits{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .cards{grid-template-columns:1fr}
+    .benefits{grid-template-columns:1fr}
+    nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner header-inner">
+    <div class="header-inner">
+      <div class="logo">Фианит Ломбард</div>
+      <nav>
+        <a href="#how">Как это работает</a>
+        <a href="#terms">Условия</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="hero">
+  <div class="container split">
+    <div>
+      <h1>Безопасное хранение ценностей в период нестабильности — с доступом к финансовым услугам онлайн</h1>
+      <p style="margin-top:20px">Когда дома возникают напряжённые или непредсказуемые ситуации, важно сохранять имущество и избегать импульсивных решений. Ценности можно временно передать на хранение в защищённую ячейку и пользоваться финансовыми услугами дистанционно.</p>
+      <button class="cta" style="margin-top:32px">Перейти в приложение</button>
+      <p class="secondary">Доступ к оформлению и управлению финансовыми услугами — в личном кабинете и мобильном приложении.</p>
+    </div>
+    <div class="hero-visual"></div>
+  </div>
+</section>
+
+<section id="situations">
+  <div class="container">
+    <h2>Подходит для сложных жизненных ситуаций</h2>
+    <p class="secondary">Когда требуется порядок, предсказуемость и защита имущества.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Дома бывает нестабильно</h3>
+        <p style="margin-top:12px">В период эмоционального напряжения, конфликтов или резких перемен ценности безопаснее временно убрать из домашнего пространства.</p>
+      </div>
+      <div class="card">
+        <h3>Важно избежать импульсивных действий</h3>
+        <p style="margin-top:12px">Если есть риск необдуманных решений, безопасное хранение помогает сохранить имущество и снизить давление ситуации.</p>
+      </div>
+      <div class="card">
+        <h3>Требуется финансовая подстраховка</h3>
+        <p style="margin-top:12px">Предмет находится на хранении, а вы можете оформлять займы дистанционно — без повторных оценок и посещения офиса.</p>
+      </div>
+      <div class="card">
+        <h3>Нужно сохранить стоимость</h3>
+        <p style="margin-top:12px">Фиксация стоимости при первичной оценке позволяет сохранить ценность предмета на весь период.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <h2>Как это работает</h2>
+    <p class="secondary">Простой и предсказуемый процесс в любой ситуации.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>Передать ценность на хранение</h3>
+        <p class="secondary">При первичной оценке предмет размещается в защищённой ячейке, доступной только владельцу.</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Пользоваться финансовыми услугами онлайн</h3>
+        <p class="secondary">В личном кабинете или приложении доступны оформление займов и продление срока хранения.</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>Забрать предмет в любой момент</h3>
+        <p class="secondary">Предмет выдаётся владельцу при обращении в ломбард.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="when-helps">
+  <div class="container">
+    <h2>Когда сервис особенно помогает</h2>
+    <p class="secondary">Решение для периодов восстановления, перемен и эмоционального напряжения.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Когда нужно избежать лишних соблазнов</h3>
+        <p style="margin-top:12px">В ситуациях, когда важно соблюдать стабильность, хранение помогает убрать ценные вещи из доступа и снизить риски.</p>
+      </div>
+      <div class="card">
+        <h3>Когда родственникам важна защищённость имущества</h3>
+        <p style="margin-top:12px">Хранение позволяет временно исключить вероятность потерь или необдуманных действий с ценностями.</p>
+      </div>
+      <div class="card">
+        <h3>Когда требуется аккуратный финансовый инструмент</h3>
+        <p style="margin-top:12px">Можно получать займы онлайн, спокойно и без лишних эмоций.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="container">
+    <h2>Безопасность. Контроль. Спокойствие.</h2>
+    <div class="benefits cards">
+      <div class="card">
+        <h3>Надёжное хранение</h3>
+        <p class="secondary">Ценности размещаются в защищённой зоне, подобной банковской ячейке.</p>
+      </div>
+      <div class="card">
+        <h3>Дистанционный доступ к услугам</h3>
+        <p class="secondary">Все операции выполняются через приложение.</p>
+      </div>
+      <div class="card">
+        <h3>Фиксация стоимости</h3>
+        <p class="secondary">Цена предмета не меняется на протяжении всего срока хранения.</p>
+      </div>
+      <div class="card">
+        <h3>Минимум внешних факторов</h3>
+        <p class="secondary">Сервис помогает снизить риски импульсивных решений, что важно в эмоционально сложные периоды.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="container">
+    <h2>Условия</h2>
+    <div class="details-group">
+      <div class="card">Режим «Хранение»: 0,05% в день</div>
+      <div class="card">Режим «Займ»: 0,328% в день</div>
+      <div class="card">Фиксация стоимости при первичной оценке</div>
+      <div class="card">Оформление займов без повторных оценок</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <h2>Частые вопросы</h2>
+    <div class="details-group">
+      <details>
+        <summary>Можно ли забрать предмет в любой момент?</summary>
+        <p style="margin-top:12px">Да, предмет выдаётся владельцу при обращении в любое рабочее время.</p>
+      </details>
+      <details>
+        <summary>Помогает ли хранение снизить риски?</summary>
+        <p style="margin-top:12px">Хранение позволяет временно убрать ценности из зоны эмоционального или бытового давления.</p>
+      </details>
+      <details>
+        <summary>Можно ли выполнять операции дистанционно?</summary>
+        <p style="margin-top:12px">Да, оформление займов и продление хранения доступны в приложении.</p>
+      </details>
+      <details>
+        <summary>Будет ли меняться оценка предмета?</summary>
+        <p style="margin-top:12px">Нет, стоимость фиксируется при первичном оформлении.</p>
+      </details>
+      <details>
+        <summary>Можно ли использовать сервис в период восстановления или перемен дома?</summary>
+        <p style="margin-top:12px">Да, сервис помогает сохранить имущество и обеспечивает предсказуемость.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="final">
+  <div class="container split">
+    <div>
+      <h2>Ценности в защищённом месте. Финансовые возможности — спокойно и дистанционно.</h2>
+      <p class="secondary">Передайте ценности на хранение и пользуйтесь финансовыми услугами дистанционно — в удобное время.</p>
+      <button class="cta" style="margin-top:32px">Перейти в приложение</button>
+      <p class="secondary">Узнайте подробные условия в приложении и на сайте ломбарда.</p>
+    </div>
+    <div class="hero-visual"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>Фианит Ломбард, 2025</div>
+    <div class="footer-links">
+      <a href="#">Условия обслуживания</a>
+      <a href="#">Контакты</a>
+      <a href="#">Адреса ломбардов</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
