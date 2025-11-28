@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуга хранения вещей</title>
+    <style>
+        :root {
+            --bg-color: #F7F7F7;
+            --accent-color: #FF0000;
+            --text-color: #2B2B2B;
+            --white: #FFFFFF;
+            --container-width: 1200px;
+            --spacing-unit: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 32px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #4a4a4a;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-bottom: 24px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 9999px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        .grid-2, .grid-3, .grid-4 {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .card {
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            height: 100%;
+        }
+
+        /* Hero Block */
+        header {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        header h1 {
+            max-width: 800px;
+            margin: 0 auto 24px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            color: #555;
+        }
+
+        .legal-text {
+            font-size: 0.875rem;
+            color: #888;
+            margin-top: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Specifics */
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #eee;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        blockquote {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-color);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ */
+        details {
+            background: var(--white);
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: #4a4a4a;
+        }
+
+        /* Footer / Final Offer */
+        footer {
+            background-color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            margin-top: 40px;
+        }
+
+        .price-highlight {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 40px 0;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Спокойное и безопасное хранение имущества в сложные периоды</h1>
+            <p class="subtitle">Когда важно сохранить имущество и снизить напряжение, сервис хранения помогает убрать вещи в надёжное место и получить финансовую подстраховку в подходящий момент.</p>
+            <a href="#" class="btn">Перейти в приложение</a>
+            <p class="legal-text">Первичное оформление проводится в ломбарде. В приложении можно оставить заявку на предварительную оценку, а итоговую стоимость назовёт специалист при визите.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- БЛОК 2 -->
+        <section>
+            <div class="container">
+                <h2>Когда требуется порядок, предсказуемость и защита имущества</h2>
+                <p class="subtitle" style="margin-bottom: 32px;">Этот формат подходит людям и семьям, переживающим напряжение, нестабильность или частые эмоциональные перепады.</p>
+                <div class="grid-2">
+                    <article class="card">
+                        <h3>Дома бывает нестабильно</h3>
+                        <p>В период эмоционального напряжения, конфликтов или резких перемен имущество безопаснее временно убрать из домашнего пространства.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Важно избежать импульсивных действий</h3>
+                        <p>Хранение помогает снизить риск необдуманных решений и сохранить имущество.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Требуется финансовая подстраховка</h3>
+                        <p>Имущество находится на хранении, а займ можно оформить дистанционно — без повторных оценок.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Нужно сохранить стоимость</h3>
+                        <p>Фиксация стоимости при первичной оценке сохраняет ценность имущества на весь период.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3 -->
+        <section style="background-color: #fff;">
+            <div class="container">
+                <h2>Простой и предсказуемый процесс</h2>
+                <div class="grid-3">
+                    <div>
+                        <div class="step-number">01</div>
+                        <h3>Передать имущество на хранение</h3>
+                        <p>Имущество размещается в специализированном защищённом хранилище при первичном визите.</p>
+                    </div>
+                    <div>
+                        <div class="step-number">02</div>
+                        <h3>Воспользоваться услугой, когда потребуется</h3>
+                        <p>В мобильном приложении можно посмотреть условия, ориентировочную сумму и оформить займ дистанционно, если возникнет необходимость.</p>
+                    </div>
+                    <div>
+                        <div class="step-number">03</div>
+                        <h3>Получить доступ к имуществу в удобное время</h3>
+                        <p>Вы сами решаете, когда вернуться к имуществу или продлить срок хранения.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 4 -->
+        <section>
+            <div class="container">
+                <h2>Что говорят клиенты</h2>
+                <blockquote>
+                    <p>«У нас дома начался сложный период — муж вёл себя непредсказуемо, и я переживала, что он может в порыве эмоций куда-то сдать или потерять наши украшения. Хотелось просто убрать вещи подальше, чтобы дома стало спокойнее и чтобы никто не делал резких шагов.</p>
+                    <p>В ломбарде предложили хранение. Я принесла украшения — оформили спокойно, без давления. Вещи были в надёжном месте, и у меня наконец появилось чувство контроля. Когда понадобились деньги на бытовые расходы, оформила займ через приложение — быстро и без лишних разговоров.</p>
+                    <p style="margin-bottom: 0;">Это оказался самый аккуратный и спокойный способ пережить непростой период, ничего не продавая и не усугубляя ситуацию.»</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- БЛОК 5 -->
+        <section>
+            <div class="container">
+                <h2>Поддержка в период перемен и эмоционального напряжения</h2>
+                <div class="grid-3">
+                    <article class="card">
+                        <h3>Когда нужно снизить влияние внешних факторов</h3>
+                        <p>Хранение помогает убрать имущество из зоны рисков и сосредоточиться на важных задачах.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Когда важна защищённость имущества родственников</h3>
+                        <p>Хранение временно исключает вероятность случайных потерь или необдуманных действий.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Когда требуется аккуратный финансовый инструмент</h3>
+                        <p>Можно оформить займ онлайн и использовать средства для решения личных вопросов.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 6 -->
+        <section style="background-color: #fff;">
+            <div class="container">
+                <h2>Почему безопасное хранение — более предсказуемый вариант</h2>
+                <ul style="font-size: 1.1rem; line-height: 1.8;">
+                    <li>Не возникает неловкости или напряжения в отношениях.</li>
+                    <li>Имущество не теряется и не повреждается случайно.</li>
+                    <li>Стоимость фиксируется и сохраняется.</li>
+                    <li>Управление доступом остаётся только за владельцем.</li>
+                    <li>Условия прозрачны и не зависят от человеческого фактора.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- БЛОК 7 -->
+        <section>
+            <div class="container">
+                <h2>Безопасность. Контроль. Спокойствие.</h2>
+                <div class="grid-2">
+                    <article class="card">
+                        <h3>Надёжное хранение</h3>
+                        <p>Имущество размещается в защищённом хранилище, аналогичном банковским стандартам.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Удобное оформление услуг в приложении</h3>
+                        <p>Все действия по займу доступны через мобильное приложение — без визитов.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Фиксация стоимости</h3>
+                        <p>Стоимость имущества сохраняется на весь срок хранения.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Защищённость доступа</h3>
+                        <p>Приложение защищено паролем или биометрией — распоряжаться услугами может только владелец.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 8 -->
+        <section>
+            <div class="container">
+                <h2>Аккуратность и защита доступа</h2>
+                <ul>
+                    <li>Все действия доступны только после авторизации.</li>
+                    <li>Управление услугами — только у владельца имущества.</li>
+                    <li>Данные о пользовании услугами не передаются третьим лицам.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- БЛОК 9 -->
+        <section style="background-color: #fff;">
+            <div class="container">
+                <h2>Стоимость услуг</h2>
+                <div class="grid-2">
+                    <div class="card" style="border: 2px solid var(--accent-color);">
+                        <div class="price-highlight">Хранение: 0,05% в день</div>
+                        <div class="price-highlight">Займ: 0,328% в день</div>
+                    </div>
+                    <div>
+                        <h3>Важно знать</h3>
+                        <ul>
+                            <li>Стоимость имущества фиксируется при первичной оценке.</li>
+                            <li>Повторная оценка не требуется при последующих займах.</li>
+                            <li>Займы доступны дистанционно через мобильное приложение.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 10 -->
+        <section>
+            <div class="container">
+                <h2>Вопросы и ответы</h2>
+                <details>
+                    <summary>Можно ли вернуть имущество в любой момент?</summary>
+                    <div class="faq-answer">Да, имущество может быть передано владельцу при обращении.</div>
+                </details>
+                <details>
+                    <summary>Помогает ли хранение снизить риски?</summary>
+                    <div class="faq-answer">Да, хранение временно убирает имущество из зоны бытового или эмоционального давления.</div>
+                </details>
+                <details>
+                    <summary>Можно ли выполнять операции дистанционно?</summary>
+                    <div class="faq-answer">Да, оформление займов и продление хранения доступны в мобильном приложении.</div>
+                </details>
+                <details>
+                    <summary>Будет ли меняться оценка имущества?</summary>
+                    <div class="faq-answer">Нет, стоимость фиксируется при первичном оформлении.</div>
+                </details>
+                <details>
+                    <summary>Можно ли использовать сервис в период восстановления?</summary>
+                    <div class="faq-answer">Да, сервис помогает сохранить имущество и обеспечить предсказуемость.</div>
+                </details>
+                <details>
+                    <summary>Можно ли оформить займ без владельца имущества?</summary>
+                    <div class="faq-answer">Нет, доступ защищён паролем или биометрией.</div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Имущество в сохранности. Финансовая поддержка — в нужный момент.</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 24px;">Передайте имущество на хранение и пользуйтесь финансовыми услугами спокойно и в удобное время.</p>
+            <a href="#" class="btn">Перейти в приложение</a>
+        </div>
+    </footer>
+
+</body>
+</html>
